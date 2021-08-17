@@ -1,0 +1,13 @@
+{% extends "problems/base.html" %}
+{% load static %}
+{% block content %}
+<br><br><br>
+<div class="container">
+  <div class="jumbotron">
+    <br>
+    <h2>You have already attempted that question correctly.</h2>
+    <br><br>
+    <a class="btn btn-primary" href="{% url 'problems:student' %}">Back</a>
+  </div>
+</div>
+{%endblock%}

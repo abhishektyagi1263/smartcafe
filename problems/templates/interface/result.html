@@ -1,0 +1,35 @@
+{% extends "problems/base.html" %}
+{% load static %}
+{% block content %}
+<br>
+<h1>Hi {{user}}! Here are you Submissions</h1>
+<br><br>
+<div class="" style="overflow-x:auto;">
+
+
+    <table class="table table-hover">
+      <thead>
+        <tr class="table-info">
+          <th scope="col">Question</th>
+          <th scope="col">Submission</th>
+          <th scope="col">Status</th>
+          <th scope="col">Marks</th>
+          <th scope="col">View Code</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for e in verma%}
+        <tr>
+          <th scope="row">{{e.ass}}</th>
+          <td>{{e.submittion}}</td>
+          <td>{{e.status}}</td>
+          <td>{{e.marks}}</td>
+          <td> <a href="/problems/code/{{e.id}}">View</a> </td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+    </div>
+<br><br>
+<button class="btn btn-primary" onclick="window.location.href='/problems/student'">Back</button>
+{%endblock%}

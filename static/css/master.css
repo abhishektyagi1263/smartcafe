@@ -1,0 +1,87 @@
+.top{
+  padding-top: 100px;
+}
+.change{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+/* navbar */
+.head-line{font-weight:bold;font-size:40px;}
+.navbar-nav{font-weight:500;padding-left: 1rem;}
+.nav-link{margin-left: 0.5rem;}
+@media only screen and (max-width: 992px) {
+  .feed-img{display:none;}
+  .btn-sign{margin-top: 5px;}
+  .top{padding-top: 30px;}
+}
+
+/* main page */
+
+  /* button css on hover */
+  .first{position: relative;}
+  .btn-sdw{font-family: 'Roboto', sans-serif;
+          color:#fff;
+          background-color: #fff;
+          border: none;
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+          outline: none;
+
+        }
+  .btn-sdw:hover {
+    background-color:#007BFF;
+    box-shadow: 0px 15px 20px rgba(0, 123, 255, 0.5)!important;
+    color: #fff;
+  }
+  .btn-dawn{margin-left:1rem;color: black;}
+  .phn-img{display:none;}
+/* media query main page */
+@media screen and (max-width: 600px) {
+  .head-line{text-align: center;font-size: 24px;font-weight: 500;}
+  .sub-head{text-align: center;padding: 0px 12px;}
+  .btn-sdw{
+          margin: 0;
+           position: absolute;
+           left: 50%;
+           -ms-transform: translate(-50%, -50%);
+           transform: translate(-50%, -50%);
+
+        }
+  .btn-dawn{margin-top:60px;}
+  .img-hero{display: none;}
+  .phn-img{display: block; }
+
+}
+
+
+
+/* login css*/
+.btn-submit-login{background-color: #007BFF;
+  box-shadow: 0px 15px 20px rgba(0, 123, 255, 0.3);
+  color: #fff; padding:3% 40% 3% 40%!important;
+  margin-left: 10px}
+.type-log{font-size:48px;font-weight:400; color:#0d1b2a;}
+.log-cls-line7{margin:4rem 0rem 0rem 0rem;}
+/* login media query */
+@media screen and (max-width: 600px) {
+  .login-img{display: none;}
+  .login-form{margin: 0px 20px;
+  }
+  .log-cls-line7{margin: 1rem 0rem 0rem 0rem;}
+  .btn-submit-login{margin-left: 0px;}
+  .type-log{font-size:36px;font-weight:500; color:#0d1b2a;}
+
+}
+
+/* signup */
+.signup-head{color:#0D0221;}
+.sign-head2{font-size: 36px;font-weight: 400;}
+/* signup media query */
+@media screen and (max-width: 600px) {
+.sign-up-img{display: none;}
+.signup-head{font-size: 16px;font-weight: 400;}
+.btn-lng{padding:3% 40% 3% 40%!important;}
+}

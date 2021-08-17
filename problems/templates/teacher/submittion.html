@@ -1,0 +1,58 @@
+{% extends "teacher/base.html" %}
+{% block content %}
+{% load static %}
+<br>
+<div class="" style="background-color:white;">
+<h1 class="sub-head-sub">Submissions</h1>
+
+<br>
+<form  class="input-group mb-3"action="" method="post">
+  {% csrf_token %}
+  <input class="border border-primary "type="text" name="abhi"   value="">
+  <div class="input-group-append">
+    <button type="run" class="btn btn-sm btn-outline-primary border-left-0" name="button"><i class="fas fa-search"></i></button>
+  </div>
+
+</form>
+<br>
+<div class="table-responsive border" >
+
+<table class="table table-hover">
+  <thead>
+    <th scope="col">Name</th>
+    <th scope="col">Question</th>
+    <th scope="col">Submission</th>
+    <th scope="col">Status</th>
+    <th scope="col">Marks</th>
+
+    <th scope="col">View Code</th>
+  </thead>
+  {%for e in sub%}
+  <tr>
+    <td>{{e.name}}</td>
+    <td>{{e.ass}}</td>
+    <td>{{e.submittion}}</td>
+    <td>{{e.status}}</td>
+    <td>{{e.marks}}</td>
+    <td><a href="/problems/teacher_code/{{e.id}}">View</a></td>
+
+  </tr>
+  {% endfor %}
+
+</table>
+</div>
+<!-- responsive table -->
+<form  action="/problems/export/" method="post">
+  {% csrf_token %}
+
+    <div style="margin:3% 35%">
+      <button class="btn btn-outline-success d-flex  justify-content-center align-items-center"  type="run" ><i class="fa fa-download" aria-hidden="true"></i>
+        Download</button>
+    </div>
+
+</form>
+</div>
+<br><br>
+    <button class="btn btn-primary" onclick="window.location.href='/problems/teacher'">Back</button>
+
+{%endblock%}

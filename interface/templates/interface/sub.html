@@ -1,0 +1,23 @@
+{% extends "problems/base.html" %}
+{% block content %}
+{% load static %}
+
+<div class="container">
+  <div class="jumbotron shadow">
+    {% if flag %}
+    <h2>Error : </h2>
+    {% endif %}
+    <h5 class="head-ur-sub">{{output}}</h5>
+
+  <br><br>
+  <br>
+  <h3>Here is your Code!</h3>
+  <br>
+  <h4><pre>{{code}}</pre></h4>
+  <br><br>
+  <button class="btn btn-primary" onclick="window.location.href='/problems/student'">Back</button>
+  </div>
+</div>
+
+
+{%endblock%}

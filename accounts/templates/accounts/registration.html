@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% load bootstrap4 %}
+  <div class="">
+
+  <div class="row login-form">
+  <div class="col-lg-6 log-cls-line7">
+      <h2 class="sign-head2">Sign up</h2><h2 class="signup-head"> As {{ user_type }}</h2>
+
+      <form method="post" novalidate>
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}">
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-success btn-lng">Sign up</button>
+      </form>  </div>
+      <div class="col-lg-6 sign-up-img">
+        <img src="{% static 'images/g6.png'%}" width="600px">
+      </div>
+</div>
+</div>
+
+{% endblock %}

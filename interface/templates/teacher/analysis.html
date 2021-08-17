@@ -1,0 +1,63 @@
+{% extends "teacher/base.html" %}
+{% block content %}
+{% load static %}
+
+
+
+<br><br><br><br>
+  <div class="table-responsive">
+<table class="table table-hover">
+
+  <tbody>
+      <tr>
+        <th class="table-success" scope="col">Name</th>
+        {%for i in name%}
+        <td class="tx"  scope="row">{{i}}</td>
+        {%endfor%}
+      </tr>
+      <tr>
+        <th class="table-success" scope="col">Total Files Passed</th>
+        {%for i in p%}
+        <td  class="tx"  scope="row">{{i}}</td>
+        {%endfor%}
+      </tr>
+      <tr>
+        <th class="table-success" scope="col">Total Files Failed</th>
+
+        {%for i in f%}
+        <td  class="tx" scope="row">{{i}}</td>
+        {%endfor%}
+      </tr>
+      <tr>
+        <th class="table-success" scope="col">Total Marks</th>
+
+        {%for i in marks_list%}
+        <td class="tx"  scope="row">{{i}}</td>
+        {%endfor%}
+      </tr>
+      <tr>
+        <th class="table-success" scope="col">Pass Percentage</th>
+
+        {%for i in pp_list%}
+        <td class="tx"  scope="row">{{i}}</td>
+        {%endfor%}
+      </tr>
+      <tr>
+        <th class="table-success" scope="col">Problems Attempted</th>
+        {%for i in assignment_list%}
+        <td  class="tx" scope="row">{{i}}</td>
+        {%endfor%}
+      </tr>
+  </tbody>
+  </table>
+</div>
+<form  action="/problems/ex/" method="post">
+  {% csrf_token %}
+
+    <div style="margin:3% 35%">
+      <button class="btn btn-outline-success d-flex  justify-content-center align-items-center"  type="run" ><i class="fa fa-download" aria-hidden="true"></i>
+        Download</button>
+    </div>
+
+</form>
+{%endblock%}

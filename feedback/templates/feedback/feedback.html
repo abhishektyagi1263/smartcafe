@@ -1,0 +1,69 @@
+{% extends "feedback/base.html" %}
+{% block content %}
+{% load static %}
+<div class=" h-100">
+        <center><h3 id="demo"></h3></center>
+        <div class="row h-100 justify-content-center align-items-center" style="margin:30px;">
+            <form method="POST" class="col-md-9">
+              {%csrf_token%}
+              <center>
+                <div class="AppForm shadow p-3">
+                    <div class="row">
+                      <div class="col-md-6 feed-img" >
+                        <img class="align-items-center"src="{% static 'images/ghp.png'%}" width="350px" style="margin:2rem">
+                        <!-- img feedback -->
+                      </div>
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <div class="AppFormLeft  ">
+
+                                <h1 style='margin-top:20px;'>Feedback</h1>
+                                <br>
+                                <div class="form-group position-relative mb-4" style='margin-top:20px;'>
+                                    <input type="text"
+                                        name="name" class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none"
+                                        id="username" placeholder="Enter Name">
+                                </div>
+                                <!-- <div class="form-group position-relative mb-4" style='margin-top:20px;'>
+                                    <input type="email"
+                                        class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none"
+                                        id="comment" placeholder="Enter Email">
+                                </div> -->
+                                <div class="form-group position-relative mb-4" style='margin-top:20px;'>
+                                    <input type="text"
+                                        name="rate"class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none"
+                                        id="rating" placeholder="Rate b/w 1 to 10">
+                                </div>
+
+
+                                <div class="form-group position-relative mb-4" style='margin-top:20px;'>
+                                    <input type="text"
+                                        name="feedback"class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none"
+                                        id="comment" placeholder="Comment">
+                                </div>
+
+
+                                <button onclick="myFunction()" type="submit" class="btn btn-outline-success btn btn-block " style='margin-top:20px;margin-bottom:20px;'>
+                                Submit</button>
+
+
+                            </div>
+                            <!-- form data ends -->
+
+                        </div>
+                        <!-- right part -->
+
+                    </div>
+                    <!--  inner row  -->
+                </div>
+                </center>
+                <!-- shadow div -->
+
+            </form>
+            <!-- form ends -->
+
+        </div>
+        <!-- outer row ends -->
+
+    </div>
+    <!-- container ends -->
+{%endblock%}

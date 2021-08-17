@@ -1,0 +1,231 @@
+body{background: url('/static/images/Web192.png');
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+a{text-decoration: none;}
+.head{margin: 10px; text-align: center;color:black; text-decoration: none;}
+.mic{padding-top: 1rem;}
+
+
+/* cards teachers */
+
+.education {
+  --bg-color: #ffd861;
+  --bg-color-light: #ffeeba;
+  --text-color-hover: #4c5656;
+  --box-shadow-color: rgba(255, 215, 97, 0.48);
+}
+
+.credentialing {
+  --bg-color: #b8f9d3;
+  --bg-color-light: #e2fced;
+  --text-color-hover: #4c5656;
+  --box-shadow-color: rgba(184, 249, 211, 0.48);
+}
+
+.wallet {
+  --bg-color: #ceb2fc;
+  --bg-color-light: #f0e7ff;
+  --text-color-hover: #fff;
+  --box-shadow-color: rgba(206, 178, 252, 0.48);
+}
+
+.human-resources {
+  --bg-color: #dce9ff;
+  --bg-color-light: #f1f7ff;
+  --text-color-hover: #4c5656;
+  --box-shadow-color: rgba(220, 233, 255, 0.48);
+}
+
+.d-cards {
+  width: 220px;
+  height: 321px;
+  background: #fff;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+  margin:0rem 1rem 0rem 0rem;
+}
+
+.d-cards:hover {
+  transform: translateY(-5px) scale(1.005) translateZ(0);
+  box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
+    0 24px 46px var(--box-shadow-color);
+}
+
+.d-cards:hover .overlay {
+  transform: scale(4) translateZ(0);
+}
+
+.d-cards:hover .circle {
+  border-color: var(--bg-color-light);
+  background: var(--bg-color);
+}
+
+.d-cards:hover .circle:after {
+  background: var(--bg-color-light);
+}
+
+.d-cards:hover p {
+  color: var(--text-color-hover);
+}
+
+.d-cards:active {
+  transform: scale(1) translateZ(0);
+  box-shadow: 0 15px 24px rgba(0, 0, 0, 0.11),
+    0 15px 24px var(--box-shadow-color);
+}
+
+.d-cards p {
+  font-size: 17px;
+  color: #4c5656;
+  margin-top: 30px;
+  z-index: 1000;
+  transition: color 0.3s ease-out;
+
+}
+
+.circle {
+  width: 131px;
+  height: 131px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  transition: all 0.3s ease-out;
+
+}
+
+.circle:after {
+  content: "";
+  width: 118px;
+  height: 118px;
+  display: block;
+  position: absolute;
+  background: var(--bg-color);
+  border-radius: 50%;
+  top: 7px;
+  left: 7px;
+  transition: opacity 0.3s ease-out;
+}
+
+.circle-svg {
+  z-index: 10000;
+  transform: translateZ(0);
+}
+
+.overlay {
+  width: 118px;
+  position: absolute;
+  height: 118px;
+  border-radius: 50%;
+  background: var(--bg-color);
+  top: 70px;
+  left: 50px;
+  z-index: 0;
+  transition: transform 0.3s ease-out;
+}
+
+
+/* @mediaquey of teacher */
+@media screen and (max-width: 600px) {
+
+.d-cards {
+  width: 220px;
+  height: 221px;
+  background: #fff;
+  margin:0% 20% 15% ;
+}
+
+.circle {
+  width: 131px;
+  height: 131px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  transition: all 0.3s ease-out;
+
+}
+
+.circle:hover {
+  background-color: white;
+}
+
+.circle-svg {
+  z-index: 10000;
+  transform: translateZ(0);
+  display:block;
+}
+
+.overlay {
+  top: 10px;
+  left: 50px;
+  z-index: 0;
+  transition: transform 0.3s ease-out;
+}
+.overlay:after {
+  width: 118px;
+  position: absolute;
+  height: 118px;
+  border-radius: 50%;
+  background: var(--bg-color);
+  top: 70px;
+  left: 50px;
+  z-index: 0;
+  transition: transform 0.3s ease-out;
+  display: block;
+}
+
+
+}
+
+
+
+/* media query dashboard ends */
+
+
+
+
+/* question upload */
+.add-ques-h1{font-size: 36px; font-weight:bold;}
+.btn-upload-ques{
+  margin-left: 50%;
+}
+@media screen and (max-width: 600px) {
+  .btn-upload-ques{
+    padding: 3% 35% 3% 35%;
+    margin: 2% 10% ;
+  }
+  .add-ques-h1{font-size: 26px; font-weight:500;}
+
+}
+
+/* submittions */
+
+@media screen and (max-width: 600px) {
+  .sub-head-sub{font-size: 26px; font-weight:500;}
+
+}
+
+@media screen and (max-width: 600px) {
+  .edit-head{font-size: 26px; font-weight: 500;}
+  }

@@ -1,0 +1,98 @@
+{% extends "problems/base.html" %}
+{% load static %}
+{% block content %}
+<style media="screen">
+  button {
+    width:125px;
+    padding:10px;
+  }
+
+  .btnEnable {
+    background-color:#E6F9D2;
+    border:1px solid #97DE4C;
+    color:#232323;
+    cursor:pointer;
+  }
+
+  .btnDisable {
+    background-color:#FCBABA;
+    border:1px solid #DD3939;
+    color:#232323;
+    cursor:wait;
+  }
+</style>
+<div class="container">
+
+
+<div class="jumbotron shadow">
+  <br>
+<h2>You have 20 min to solve the Question <div class="pull-right" id="myTimer"></div></h2>
+
+<br><br>
+
+{% if ass %}
+
+<center><h1>{{ass.name}}</h1></center>
+<br><br>
+<h3>
+  NOTE:</h3><h4>
+  <br><br>
+  <ol>
+    <li> Please Check the input-output format. You should not print anything except the I/O you are asked to print. </li>
+    <br><li> Write code that accepts asked input (Without printing any string such as "First No.", "Enter no. of elements" etc.) and prints only the output (without writing any string such as "Result is", "Factorial of a given number is" etc. )</li>
+  </ol>
+</h4>
+<br><br>
+<h2><pre style="white-space:pre-wrap;">{{ass.que}}</pre></h2>
+{% endif %}
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 mt-5 mb-5">
+      <form action="sub/" id="hii" method="post">
+        {% csrf_token %}
+        <div class="form-group row">
+          <div class="col-lg-10 col-sm-12">
+            <label for="comment"><h4>Coding Area</h4></label>
+            <textarea class="form-control" rows="14" name="code_area" style="border:1px solid grey; letter-spacing: 1px; font-family: 'Lucida Console'; font-size: 20px; " onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{code}}</textarea>
+          </div>
+
+          <!-- <div class="col-sm-3">
+
+            <div class="row">
+              <label for="comment"><h5>Result</h5></label>
+              <textarea class="form-control" rows="7" name="output_area" style="border:1px solid grey;" disabled>{{output}}</textarea>
+            </div>
+          </div> -->
+        </div>
+        {% if sr %}
+        {% for a in sr%}
+        <input type="hidden" name="hid" value="{{a.no}}">
+        <input type="hidden" name="user" value="{{user}}">
+        <input type="hidden" name="id" value="{{user.id}}">
+        {% endfor %}
+
+
+        {%endif%}
+
+
+        <div class="form-group row">
+          <div class="col-sm-6 ml-3">
+            <br><br>
+            <button id="myBtn" class="btn btn-outline-success float-right btnEnable"  type="run" onclick="this.disabled=true;this.value='Sending, please wait...';this.form.submit();">Submit code</button>
+
+
+
+            <!-- <button type="button" id="myBtn" class="btnEnable" onclick="alert('Finally!')">Click</button> -->
+
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+{% endblock %}

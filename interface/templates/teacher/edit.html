@@ -1,0 +1,33 @@
+{% extends "teacher/base.html" %}
+{% load static %}
+{% block content %}
+<br>
+
+<div class="container-fluid col-lg-8">
+<h1 class="edit-head">Edit Question</h1>
+<form action="/problems/edit_all/"  method="post">
+  {% csrf_token %}
+  <div class="">
+    <h6 class="mic">Question Number</h6><input class="form-control" type="number" name="no" value="{{no}}"><br>
+    <h6 class="mic">Enter Name</h6><input class="form-control" type="text" name="name" value="{{name}}"><br>
+    <h6 class="mic">Difficulty</h6><input class="form-control" type="text" name="difficulty" value="{{difficulty}}"><br>
+    <h6 class="mic">Info</h6><input class="form-control" type="text" name="info" value="{{info}}"><br>
+    <h6 class="mic">Enter Question Statement</h6>
+    <textarea class="form-control" name="question" rows="8" cols="80">{{que}}</textarea><br>
+    <h6 class="mic">Input1</h6><input class="form-control" type="text" name="input1" value="{{input1}}"><br>
+    <h6 class="mic">Input2</h6><input class="form-control" type="text" name="input2" value="{{input2}}"><br>
+    <h6 class="mic">Output1<h6><input class="form-control" type="text" name="output1" value="{{output1}}"><br>
+    <h6 class="mic">Output2</h6><input class="form-control" type="text" name="output2" value="{{output2}}"><br>
+    <input type="hidden" name="imp" value="{{no}}">
+    <div class="form-group row">
+      <div class="col-sm-7 ml-3">
+        <button onclick="alert('Qusetion Edited Successfully!')" class="btn btn-outline-success float-right"  type="ques" >Save</button>
+      </div>
+    </div>
+  </div>
+  </form>
+  </div>
+  <br><br>
+      <button class="btn btn-primary" onclick="window.location.href='/problems/teacher'">Back</button>
+
+{% endblock%}
