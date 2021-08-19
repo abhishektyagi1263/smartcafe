@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'compiler',
     'feedback',
-    'problems',
+    # 'problems',
     'interface',
     'bootstrap4',
 ]

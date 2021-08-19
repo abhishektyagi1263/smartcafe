@@ -1,5 +1,5 @@
 from django.urls import reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import TemplateView
 from django.shortcuts import render
 from django.shortcuts import redirect
@@ -14,7 +14,8 @@ def about_view(request):
 def home(request):
     if request.user.is_authenticated:
         if request.user.is_staff:
-            return redirect('interface:teacher')
+            # return redirect('interface:teacher')
+            return HttpResponse("<h1>Staff</h1>")
         else:
             return redirect('interface:test')
     return render(request, 'index.html')

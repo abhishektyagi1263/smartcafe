@@ -1,4 +1,4 @@
-{% extends 'customer/base.html' %}
+{% extends 'interface/base.html' %}
 
 {% block content %}
 <div class="container ">
@@ -7,7 +7,24 @@
             <form method="POST">
                 {% csrf_token %}
                 <!--  -->
-              
+                    
+                <h3 class="mt-3" style="font-weight: 700;">Bevarages</h3>
+                <div class="card-deck">
+                {% for bev in  beverages %}
+                <div class="card">
+                        <img  src="{{ bev.image }}" class="card-img-top"  />
+                        <div class="card-body" style="background-color: EDE5A6;">
+                            <div class="form-group form-check">
+                                <input type="checkbox" name="items[]" class="form-check-input" value="{{ bev.pk }}">
+                                <label class="form-check-label">{{ bev.name }}</label>
+                            </div>
+                            <p class="">{{ bev.price }}</p>
+                        
+                        <p>{{ bev.description }}</p></div>
+                </div>   
+                {% endfor %}
+            </div>
+
 
               
                     <h3 class="mt-3" style="font-weight: 700;">Snacks And Sides</h3>
@@ -65,15 +82,15 @@
                 </div>
                 
 <!-- form for order -->
-                <div class="form-group pt-3">
+                <!-- <div class="form-group pt-3">
                     <label for="name">Full Name</label>
                     <input required class="form-control" type="text" placeholder="Your Name" name="name" />
-                </div>
+                </div> -->
 
-                <div class="form-group pt-3">
+                <!-- <div class="form-group pt-3">
                     <label for="email">Email Address</label>
                     <input required class="form-control" type="text" placeholder="example@company.com" name="email" />
-                </div>
+                </div> -->
 
                 <div class="form-group pt-3">
                     <label for="email">Comment</label>

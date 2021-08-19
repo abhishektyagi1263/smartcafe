@@ -41,8 +41,8 @@ class StudentSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        # return redirect('problems:student')
-        return HttpResponse("<h1>student</h1>")
+        return redirect('interface:test')
+        # return HttpResponse("<h1>student</h1>")
 
 
 class StaffSignUpView(CreateView):
@@ -57,5 +57,5 @@ class StaffSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        # return redirect('problems:teacher')
+        # return redirect('interface:teacher')
         return HttpResponse("<h1>Staff</h1>")

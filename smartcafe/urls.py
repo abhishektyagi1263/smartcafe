@@ -25,7 +25,7 @@ urlpatterns = [
     path('accounts/', include("django.contrib.auth.urls")),
     path('thanks/', views.ThanksPage.as_view(), name="thanks"),
     path('about/', views.about_view, name="about"),
-    path('problems/', include("problems.urls", namespace="problems")),
+   
     path('interface/', include("interface.urls", namespace="interface")),
     path('compiler/', include("compiler.urls", namespace="compiler")),
     path('feedback/', include("feedback.urls", namespace="feedback")),

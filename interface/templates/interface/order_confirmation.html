@@ -1,4 +1,4 @@
-{% extends 'customer/base.html' %}
+{% extends 'interface/base.html' %}
 
 {% block content %}
 <div class="container mb-5">
@@ -6,7 +6,7 @@
         <div class="col-md-5 col-sm-12 p-4 text-center">
             <h1>Order Submitted!</h1>
             <p>You should receive a confirmation email soon.</p>
-            <a href="{% url 'index' %}">Go to the homepage</a>
+            <a href="{% url 'interface:test' %}">Go to the homepage</a>
         </div>
     </div>
 
@@ -88,13 +88,13 @@ const csrftoken = getCookie('csrftoken');
         // Show a confirmation message to the buyer
         $.ajax({
             type: 'POST',
-            url: "{% url 'order-confirmation' pk %}",
+            url: "{% url 'interface:order-confirmation' pk %}",
             beforeSend: function(request) {
                 request.setRequestHeader('X-CSRFToken', csrftoken)
             },
             data: JSON.stringify({'isPaid': true}),
             success: function(data) {
-                window.location.href = '/payment-confirmation/'
+                window.location.href = 'interface/payment-confirmation/'
             }
         })
       });

@@ -216,8 +216,8 @@
           <div class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
           {% if user.is_student%}
-            <a class="nav-item nav-link" href="{% url 'problems:student' %}" class="btn btn-simple">Problems</a>
-            <a class="nav-item nav-link" href="{% url 'problems:result' %}" class="btn btn-simple">Your Submissions</a>
+            <a class="nav-item nav-link" href="{% url 'interface:test' %}" class="btn btn-simple">Problems</a>
+            <a class="nav-item nav-link" href="{% url 'interface:order' %}" class="btn btn-simple">Your Submissions</a>
           {% endif %}
             <a class="nav-item nav-link" href="{% url 'compiler:home' %}" class="btn btn-simple">Compiler</a>
             <a class="nav-item nav-link" href="{% url 'feedback:feedback' %}" class="btn btn-simple">Feedback</a>
