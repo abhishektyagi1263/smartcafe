@@ -8,27 +8,27 @@
             <a href="{% url 'interface:test' %}">Go to the homepage</a>
         </div>
     </div>
-</div>
+
 <div class="row justify-content-center">
     <div class="col-md-12 mt-5">
-        <table class="table table-hover table-striped">
-            <thead>
+        <table class="table table-hover table-borderless" >
+            <thead style="background-color: #52b788; color:white;">
               <tr>
-                
+                <th scope="col">Items</th>
+                <th scope="col">Date and Time</th>
                 <th scope="col">Price</th>
-                <th scope="col">Name</th>
                 
+                
+
               </tr>
             </thead>
             <tbody>
                 {% for myorder in myorders %}
                 <tr>
+                    <td>{{ myorder.items_name }}</td>
                     
+                    <td>{{myorder.created_on}}</td> 
                     <td>{{ myorder.price }}</td>
-                    <td>{{ myorder.name }}</td>
-                    <td>
-                    </td>
-             
                     
                 </tr>
                 {% endfor %}
@@ -36,8 +36,6 @@
             </tbody>
           </table>
     </div>
-                        {% for i in myid %}
-                        {{i.name}}
-                        {% endfor %}
-</div>
+                        
+</div></div>
 {% endblock content %}

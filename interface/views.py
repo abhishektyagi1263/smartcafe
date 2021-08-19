@@ -59,19 +59,29 @@ class Order(LoginRequiredMixin, View):
         
         price = 0
         item_ids = []
-
+        item_name = []
         for item in order_items['items']:
             price += item['price']
             item_ids.append(item['id'])
+            item_name.append(item['name'])
+
+        str1 = "" 
+        for ele in item_name: 
+             str1 += ele  
         
+        
+    
+
         order = OrderModel.objects.create(
             price=price,
             name=name,
             email=email,
+            comment=comment,
+            items_name=str1,
            
         )
         order.items.add(*item_ids)
-
+        # order.items_name.add(*item_name)
         # # After everything is done, send confirmation email to user
         # body = ('Thank you for your order!  Your food is being made and will be delivered soon!\n'
         # f'Your total: {price}\n'
@@ -118,12 +128,9 @@ class OrderPayConfirmation(LoginRequiredMixin, View):
 class History(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         myorders = OrderModel.objects.filter(name = request.user.username)
-        myid = OrderModel.objects.get(name = request.user.username).values_list('items')
-        # mylist = myorders.items
-        # for i in myid:
-        print(myid[1])
+        
         context = {
             'myorders': myorders,
-             'myid': myid
+            
         }
         return render(request, 'interface/history.html', context)
