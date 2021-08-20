@@ -9,18 +9,21 @@ from django.db.models import Q
 import sys
 import csv
 from django.db.models import Sum
+from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .decorators import student_required,staff_required
 from accounts.models import User
- 
+from django.utils.timezone import datetime
+
 # @login_required
 # @student_required
+@method_decorator(student_required, name='dispatch')
 class test(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         return render(request, 'interface/test.html')
 
 
-
+@method_decorator(student_required, name='dispatch')
 class Order(LoginRequiredMixin, View):
   
     def get(self, request, *args, **kwargs):
@@ -104,6 +107,7 @@ class Order(LoginRequiredMixin, View):
 
 # @login_required
 # @student_required
+@method_decorator(student_required, name='dispatch')
 class OrderConfirmation(LoginRequiredMixin, View):
     def get(self, request, pk, *args, **kwargs):
         order = OrderModel.objects.get(pk=pk)
@@ -121,10 +125,12 @@ class OrderConfirmation(LoginRequiredMixin, View):
 
 # @login_required
 # @student_required
+@method_decorator(student_required, name='dispatch')
 class OrderPayConfirmation(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         return render(request, 'interface/order_pay_confirmation.html')
-
+        
+@method_decorator(student_required, name='dispatch')
 class History(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         myorders = OrderModel.objects.filter(name = request.user.username)
@@ -134,3 +140,21 @@ class History(LoginRequiredMixin, View):
             
         }
         return render(request, 'interface/history.html', context)
+
+@method_decorator(staff_required, name='dispatch')
+class Dashboard(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        today = datetime.today()
+        orders = OrderModel.objects.filter(created_on__year=today.year, created_on__month=today.month, created_on__day=today.day)
+        total_revenue = 0
+
+        for order in orders:
+            total_revenue += order.price
+        
+        context = {
+            'orders': orders,
+            'total_revenue': total_revenue,
+            'total_orders': len(orders)
+        }
+        return render(request, 'teacher/dashboard.html', context)
+

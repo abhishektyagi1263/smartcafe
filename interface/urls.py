@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+
 app_name = 'interface'
 
 urlpatterns = [
@@ -9,4 +10,6 @@ urlpatterns = [
     path('history/', views.History.as_view(), name='history'),
     path('order-confirmation/<int:pk>/', views.OrderConfirmation.as_view(), name='order-confirmation'),
     path('payment-confirmation/', views.OrderPayConfirmation.as_view(), name='payment-confirmation'),
+    path('dashboard/', views.Dashboard.as_view(), name='dashboard'),
+
 ]

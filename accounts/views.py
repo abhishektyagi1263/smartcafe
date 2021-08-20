@@ -57,5 +57,5 @@ class StaffSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        # return redirect('interface:teacher')
-        return HttpResponse("<h1>Staff</h1>")
+        return redirect('interface:dashboard')
+        # return HttpResponse("<h1>Staff</h1>")

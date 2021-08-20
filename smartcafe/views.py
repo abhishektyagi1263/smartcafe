@@ -14,8 +14,8 @@ def about_view(request):
 def home(request):
     if request.user.is_authenticated:
         if request.user.is_staff:
-            # return redirect('interface:teacher')
-            return HttpResponse("<h1>Staff</h1>")
+            return redirect('interface:dashboard')
+            # return HttpResponse("<h1>Staff</h1>")
         else:
             return redirect('interface:test')
     return render(request, 'index.html')
