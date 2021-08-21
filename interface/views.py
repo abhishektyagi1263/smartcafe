@@ -10,6 +10,7 @@ import sys
 import csv
 from django.db.models import Sum
 from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .decorators import student_required,staff_required
 from accounts.models import User
@@ -158,3 +159,31 @@ class Dashboard(LoginRequiredMixin, View):
         }
         return render(request, 'teacher/dashboard.html', context)
 
+
+@login_required
+@staff_required
+def AddItem(request):
+    prob1=MenuItem.objects.all()
+    if request.method=='POST':
+        prob=MenuItem()
+        # prob.no=request.POST['no']
+        prob.name=request.POST['name']
+        prob.discription=request.POST['discription']
+        prob.image=request.POST['image']
+        prob.price=request.POST['price']
+        category=request.POST['category']
+        
+        
+       
+        prob.save()
+        prob.category.set(category)
+        return render(request,'teacher/dashboard.html')
+    else:
+        return render(request,'teacher/add_item_to_menu.html')
+
+
+@login_required
+@staff_required
+def MenuList(request):
+    menulist=MenuItem.objects.all()
+    return render(request,'teacher/menulist.html',{'menulist': menulist})

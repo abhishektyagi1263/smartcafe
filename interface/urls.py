@@ -11,5 +11,9 @@ urlpatterns = [
     path('order-confirmation/<int:pk>/', views.OrderConfirmation.as_view(), name='order-confirmation'),
     path('payment-confirmation/', views.OrderPayConfirmation.as_view(), name='payment-confirmation'),
     path('dashboard/', views.Dashboard.as_view(), name='dashboard'),
+    path('additem/', views.AddItem, name='additem'),
+    path('menulist/', views.MenuList, name='menulist'),
+
+
 
 ]
