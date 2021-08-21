@@ -173,9 +173,13 @@ def AddItem(request):
         prob.image=request.POST['image']
         prob.price=request.POST['price']
         category=request.POST['category']
+        # beverage = request.POST['beverage']
         prob.save()
-        prob.category.set(category)
-        return render(request,'teacher/menulist.html')
+        k = Category.objects.get(name = category).id
+        n= str(k)
+        prob.category.set(n)
+        menulist=MenuItem.objects.all()
+        return render(request,'teacher/menulist.html',{'menulist': menulist})
     else:
         return render(request,'teacher/add_item_to_menu.html')
 
