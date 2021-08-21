@@ -20,8 +20,8 @@
       
       <td>{{e.name}}</td>
       <td>{{e.price}}</td>
-      <!-- <td><a href="/problems/edit/{{e.name}}">Edit</a></td>
-      <td><a href="/problems/delete/{{e.name}}">Confirm Delete</a></td> -->
+      <td><a href="/interface/edit/{{e.name}}">Edit</a></td>
+      <td><a class="btn btn-danger" onclick="alert('Item Deleted')" href="/interface/delete/{{e.name}}">Confirm Delete</a></td>
     </tr>
     {%endfor%}
     </table>
@@ -29,7 +29,7 @@
 
 </div>
 <br><br>
-    <button class="btn btn-primary" onclick="window.location.href='/teacher/dashboard'">Back</button>
+    <button class="btn btn-primary" onclick="window.location.href='/interface/dashboard'">Back</button>
 
 
 {%endblock%}

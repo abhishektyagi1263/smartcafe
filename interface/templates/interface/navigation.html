@@ -9,21 +9,38 @@
     
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
+        {% if user.is_authenticated %}
+        {% if user.is_student%}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'interface:history' %}">History</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About us</a>
         </li>
-       
+        <li class="nav-item">
+          <a class="btn btn-danger" href="{% url 'interface:order' %}">Place an Order!</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'interface:dashboard' %}">dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'interface:menulist' %}">EditMenu</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'interface:additem' %}">Add Item</a>
+      </li>
       </ul>
       <ul class="navbar-nav">
          <li>
         <a class="nav-item nav-link btn btn-danger"  href="{% url 'logout' %}" class="btn btn-simple">Log out</a>
         </li>
-        <li class="nav-item">
-            <a class="btn btn-danger" href="{% url 'interface:order' %}">Place an Order!</a>
-        </li>
+        
       </ul>
+      {% endif %}
+      {% else %}
+      <a class="nav-item nav-link btn  btn-outline-primary btn-sm btn-sign" style="width:90px;" href="{% url 'login' %}" class="btn btn-simple">Log in</a>
+      <a class="nav-item nav-link btn  btn-primary btn-sm btn-sign"  style="width:90px;"href="{% url 'student_signup' %}" class="btn btn-simple">Sign up</a>
+      {% endif %}
     </div>
 </nav>

@@ -13,7 +13,9 @@ urlpatterns = [
     path('dashboard/', views.Dashboard.as_view(), name='dashboard'),
     path('additem/', views.AddItem, name='additem'),
     path('menulist/', views.MenuList, name='menulist'),
-
+    path('delete/<name>',views.deleteItem,name='del'),
+    path('edit/<name>',views.edit_que),
+    path('edit_all/',views.final),
 
 
 ]

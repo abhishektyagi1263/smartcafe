@@ -177,7 +177,7 @@ def AddItem(request):
        
         prob.save()
         prob.category.set(category)
-        return render(request,'teacher/dashboard.html')
+        return render(request,'teacher/menulist.html')
     else:
         return render(request,'teacher/add_item_to_menu.html')
 
@@ -187,3 +187,36 @@ def AddItem(request):
 def MenuList(request):
     menulist=MenuItem.objects.all()
     return render(request,'teacher/menulist.html',{'menulist': menulist})
+
+
+@login_required
+@staff_required
+def deleteItem(request,name):
+    print(name)
+
+    x=MenuItem.objects.filter(name=name)
+    x.delete()
+    menulist=MenuItem.objects.all()
+    return render(request,'teacher/menulist.html',{'menulist':menulist})
+
+@login_required
+@staff_required
+def edit_que(request,name):
+    x=MenuItem.objects.get(name=name)
+    fields={'name':x.name,'image':x.image,'price':x.price,'category':x.category,}
+    return render(request,'teacher/edit.html',fields)
+
+@login_required
+@staff_required
+def final(request):
+    fin=request.POST['imp']
+    x=MenuItem.objects.get(id=fin)
+    x.name=request.POST['name']
+    x.discription=request.POST['discription']
+    x.image=request.POST['image']
+    x.price=request.POST['price']
+    category=request.POST['category']       
+    x.save()
+    x.category.set(category)
+    x=MenuItem.objects.all()
+    return render(request,'teacher/menulist.html',{'menulist':x})
