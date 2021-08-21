@@ -164,17 +164,15 @@ class Dashboard(LoginRequiredMixin, View):
 @staff_required
 def AddItem(request):
     prob1=MenuItem.objects.all()
+    # another_model_instance = AnotherModel.objects.get(id=1)
     if request.method=='POST':
         prob=MenuItem()
-        # prob.no=request.POST['no']
+        prob.no=request.POST['no']
         prob.name=request.POST['name']
         prob.description=request.POST['description']
         prob.image=request.POST['image']
         prob.price=request.POST['price']
         category=request.POST['category']
-        
-        
-       
         prob.save()
         prob.category.set(category)
         return render(request,'teacher/menulist.html')
@@ -219,7 +217,7 @@ def final(request):
     print(type(fin))
     print(type(fif))
 
-    x=MenuItem.objects.get(no=fif)
+    x=MenuItem.objects.get(no=fin)
     x.name=request.POST['name']
     x.description=request.POST['description']
     x.image=request.POST['image']
