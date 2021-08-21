@@ -168,7 +168,7 @@ def AddItem(request):
         prob=MenuItem()
         # prob.no=request.POST['no']
         prob.name=request.POST['name']
-        prob.discription=request.POST['discription']
+        prob.description=request.POST['description']
         prob.image=request.POST['image']
         prob.price=request.POST['price']
         category=request.POST['category']
@@ -203,16 +203,25 @@ def deleteItem(request,name):
 @staff_required
 def edit_que(request,name):
     x=MenuItem.objects.get(name=name)
-    fields={'name':x.name,'image':x.image,'price':x.price,'category':x.category,}
+    fields={'no':x.no,
+     'name':x.name,
+     'description':x.description,
+     'image':x.image,
+     'price':x.price,'category':x.category,}
     return render(request,'teacher/edit.html',fields)
 
 @login_required
 @staff_required
 def final(request):
     fin=request.POST['imp']
-    x=MenuItem.objects.get(id=fin)
+    print(fin)
+    fif = int(str(fin))
+    print(type(fin))
+    print(type(fif))
+
+    x=MenuItem.objects.get(no=fif)
     x.name=request.POST['name']
-    x.discription=request.POST['discription']
+    x.description=request.POST['description']
     x.image=request.POST['image']
     x.price=request.POST['price']
     category=request.POST['category']       

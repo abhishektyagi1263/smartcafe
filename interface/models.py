@@ -9,7 +9,7 @@ class MenuItem(models.Model):
     image = models.TextField()
     price = models.DecimalField(max_digits=5, decimal_places=2)
     category = models.ManyToManyField('Category', related_name='item')
-
+    no = models.IntegerField(primary_key=True)
     def __str__(self):
         return self.name
 

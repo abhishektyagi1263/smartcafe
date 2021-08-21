@@ -9,15 +9,15 @@
 <form action="/interface/edit_all/"  method="post">
   {% csrf_token %}
   <div class="">
-    <h6 class="mic">Enter Item Name</h6><input class="form-control" type="text" name="name" value=""><br>
-    <h6 class="mic">Discription</h6><input class="form-control" type="text" name="discription" value=""><br>
-    <h6 class="mic">Image Url</h6><input class="form-control" type="text" name="image" value=""><br>
+    <h6 class="mic">Enter Item Name</h6><input class="form-control" type="text" name="name" value="{{name}}"><br>
+    <h6 class="mic">Discription</h6><input class="form-control" type="text" name="description" value="{{description}}"><br>
+    <h6 class="mic">Image Url</h6><input class="form-control" type="text" name="image" value="{{image}}"><br>
     <!-- <h6 class="mic">Enter Question Statement</h6>
     <textarea name="question" class="form-control" rows="8" cols="80" class="col-sm-4"></textarea><br> -->
     
-    <h6 class="mic">Price</h6><input class="form-control" type="text" name="price" value=""><br>
-    <h6 class="mic">Category</h6><input class="form-control" type="text" name="category" value=""><br>
-    <input type="hidden" name="imp" value="{{id}}">
+    <h6 class="mic">Price</h6><input class="form-control" type="text" name="price" value="{{price}}"><br>
+    <h6 class="mic">Category</h6><input class="form-control" type="text" name="category" value="{{category}}"><br>
+    <input type="hidden" name="imp" value="{{no}}">
     <div class="form-group row">
       <div class="col-sm-7 ml-3">
         <button onclick="alert('Qusetion Edited Successfully!')" class="btn btn-outline-success float-right"  type="ques" >Save</button>
