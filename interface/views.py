@@ -205,11 +205,17 @@ def deleteItem(request,name):
 @staff_required
 def edit_que(request,name):
     x=MenuItem.objects.get(name=name)
+    cat =x.no
+   
+   
+    # cp = int(cat)
+    catvalue = Category.objects.filter(item__pk = cat)
+    print(catvalue)
     fields={'no':x.no,
      'name':x.name,
      'description':x.description,
      'image':x.image,
-     'price':x.price,'category':x.category,}
+     'price':x.price,'category':catvalue[0],}
     return render(request,'teacher/edit.html',fields)
 
 @login_required
@@ -228,6 +234,8 @@ def final(request):
     x.price=request.POST['price']
     category=request.POST['category']       
     x.save()
-    x.category.set(category)
+    k = Category.objects.get(name = category).id
+    n= str(k)
+    x.category.set(n)
     x=MenuItem.objects.all()
     return render(request,'teacher/menulist.html',{'menulist':x})
