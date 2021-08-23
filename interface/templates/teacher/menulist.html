@@ -2,11 +2,13 @@
 {% load static %}
 {% block content %}
 <br>
-<h1>Problem Statements</h1>
+<h1><i class="fa fa-play " style=" margin-top:15px;color:#887FCE; 
+  text-align: center ;font-size: 28px;background: #B5AFEF; 
+  padding: 14px ;border-radius: 41px; margin-right: 9px;" aria-hidden="true"></i>Problem Statements</h1>
 <br><br>
 <div class="shadow-sm">
 
-  <div class="table-responsive">
+  <div class="table-responsive table-borderless">
   <table class="table">
     <thead>
       <!-- <th scope="col">No.</th> -->
@@ -20,8 +22,8 @@
       
       <td>{{e.name}}</td>
       <td>{{e.price}}</td>
-      <td><a href="/interface/edit/{{e.name}}">Edit</a></td>
-      <td><a class="btn btn-danger" onclick="alert('Item Deleted')" href="/interface/delete/{{e.name}}">Confirm Delete</a></td>
+      <td><a class="btn btn-info btn-sm" href="/interface/edit/{{e.name}}">Edit</a></td>
+      <td><a class="btn btn-danger btn-sm" onclick="alert('Item Deleted')" href="/interface/delete/{{e.name}}">Confirm Delete</a></td>
     </tr>
     {%endfor%}
     </table>
