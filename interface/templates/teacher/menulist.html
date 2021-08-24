@@ -2,36 +2,36 @@
 {% load static %}
 {% block content %}
 <br>
-<h1><i class="fa fa-play " style=" margin-top:15px;color:#887FCE; 
-  text-align: center ;font-size: 28px;background: #B5AFEF; 
-  padding: 14px ;border-radius: 41px; margin-right: 9px;" aria-hidden="true"></i>Problem Statements</h1>
-<br><br>
-<div class="shadow-sm">
 
-  <div class="table-responsive table-borderless">
-  <table class="table">
-    <thead>
-      <!-- <th scope="col">No.</th> -->
-      <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <!-- <th scope="col">Edit</th>
-      <th scope="col">Delete</th> -->
-    </thead>
+<br><br>
+<div class="container">
+  <h1><i class="fa fa-play " style=" margin-top:15px;color:#887FCE; 
+    text-align: center ;font-size: 28px;background: #B5AFEF; 
+    padding: 14px ;border-radius: 41px; margin-right: 9px;" aria-hidden="true"></i>Menu Items</h1>
+  <div class="row">
+  
     {% for e in menulist%}
-    <tr>
+    <div class="div col-lg-3 col-sm-12 p-3 " style="border:4px solid rgb(254,250,224);background-color: white; border-radius: 14px;">
+      <h5 style="font-weight: 700;">{{e.name}}</h5>
+      <h5>{{e.description}}</h5>
+      <h5>{{e.price}}</h5>
+   
+      <a class="btn btn-outline-danger btn-sm" onclick="alert('Item Deleted')" href="/interface/delete/{{e.name}}">Delete</a>
       
-      <td>{{e.name}}</td>
-      <td>{{e.price}}</td>
-      <td><a class="btn btn-info btn-sm" href="/interface/edit/{{e.name}}">Edit</a></td>
-      <td><a class="btn btn-danger btn-sm" onclick="alert('Item Deleted')" href="/interface/delete/{{e.name}}">Confirm Delete</a></td>
-    </tr>
+      <a class="btn btn-outline-primary btn-sm" href="/interface/edit/{{e.name}}">Edit</a>
+    
+    </div>
     {%endfor%}
-    </table>
+   
   </div>
+  <button class="btn btn-primary center" onclick="window.location.href='/interface/dashboard'">Back</button>
 
 </div>
 <br><br>
-    <button class="btn btn-primary" onclick="window.location.href='/interface/dashboard'">Back</button>
 
 
 {%endblock%}
+
+
+
+<!--  -->

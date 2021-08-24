@@ -1,4 +1,6 @@
 {% load static %}
+<!-- logo -->
+
 <nav>
   <div class="hamburger">
     <div class="line"></div>
@@ -8,7 +10,7 @@
   <ul class="nav-links">
     {% if user.is_authenticated %}
     {% if user.is_student%}
-    <li style="z-index: 4;">
+    <li >
       <a  href="{% url 'interface:history' %}">History</a>
     </li>
     <li >
@@ -36,11 +38,13 @@
  
   {% endif %}
   {% else %}
+  <li >
+    <a href="55" >About us</a>
+  </li>
   <li>
-  <a href="{% url 'login' %}" class="btn btn-simple">Log in</a>
+  <a href="{% url 'login' %}" class="btn btn-outline-success">Log in</a>
   </li><li>
-  <a href="{% url 'student_signup' %}" class="btn btn-simple">Sign up</a>
-
+  <a href="{% url 'student_signup' %}" class="btn btn-outline-success">Sign up</a>
   </li>
   {% endif %}
   </ul>

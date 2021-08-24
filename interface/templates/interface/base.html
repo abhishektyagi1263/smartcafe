@@ -27,7 +27,7 @@ body {
   
   nav {
     height: 10vh;
-    background: #EE733C;
+    background: rgb(255,200,119);
     border-radius:75px;
   }
   
@@ -80,10 +80,12 @@ input.requirement {
         color: #fff;
       }
 input.requirement:focus {
-        outline: none;
+        outline-style:solid;
+         outline-color:linear-gradient(to right, #ffc976, #ff5778);
         background: #2c2c2c;
         color: #fff;
         width: 100%;
+        box-shadow: none;
       }
       
   @media screen and (max-width: 768px) {
@@ -122,7 +124,7 @@ input.requirement:focus {
       clip-path: circle(1000px at 90% -10%);
       -webkit-clip-path: circle(1000px at 90% -10%);
       pointer-events: all;
-      background: #EE733C;
+      background: rgb(255,200,119);
     
     }
     .fadeed {
@@ -179,8 +181,8 @@ input.requirement:focus {
   position: absolute;
   top: 0;
   left: 0;
-  height: 35px;
-  width: 35px;
+  height: 45px;
+  width: 45px;
   background-color: #eee;
   border-radius: 45px;
 }
@@ -209,19 +211,32 @@ input.requirement:focus {
 
 /* Style the checkmark/indicator */
 .cor .checkmark:after {
-  left: 11px;
+  left: 14px;
   top: 3px;
-  width: 13px;
-  height: 26px;
+  width: 18px;
+  height: 36px;
   border: solid rgb(255, 125, 49);
   border-width: 0 5px 5px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+.ordercard{
+  background-color: rgb(255,200,119);
+  color:white;
+}
+
+
     </style>
 </head>
-<body style="background-color: #fefae0;">
+<body style="background-color: #FFF6F1;">
+  <a class="" style="position: absolute; top:8px; left:15px; z-index: 988;" href="#"><img src="{% static 'fav.png' %}" width="50px" alt="" /><span style="    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+    margin-top: 14px;
+    ">Smartcafe</span> </a>
+    
     {% include 'interface/navigation.html' %}
     {% block content %}
     {% endblock content %}

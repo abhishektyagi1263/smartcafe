@@ -1,19 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-<div class="row">
+<div class="container"> 
+  <div class="row">
+      <div class="col-lg-6">
+          <h2 class="mx-2 my-4" style="font-size: 5rem; font-weight:800;">Giving your Hunger a new Option</h2>
+          <a href="{% url 'student_signup' %}" class="btn btn-lg btn-sdw" style="background-color: #007BFF;color:white;box-shadow: 0px 15px 20px rgba(0, 123, 255, 0.3);">Sign up and Code</a>
+    <a href="{% url 'login' %}" class="btn btn-lg btn-sdw " style="color: black;">Login</a>
+   
+          
+          </div>
 
-    <div class="col-lg-6 col-md-12 top first">
-    <h1 class="head-line">Anybody can write code
-      that a computer can
-      understand.</h1><br>
-      <h5 class="sub-head">Improve your skills by training with others on
-      real code challenges</h5>
 
-      <br><br>
-    <a href="{% url 'student_signup' %}" class="btn btn-lg btn-sdw button" style="background-color: #007BFF;color:white;box-shadow: 0px 15px 20px rgba(0, 123, 255, 0.3);">Sign up and Code</a>
-    <a href="{% url 'login' %}" class="btn btn-lg btn-sdw btn-dawn">Log in</a>
-    </div>
+          <div class="col-lg-6">
+
+              <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player class="lottiefront" src="https://assets5.lottiefiles.com/private_files/lf30_6yjihjym.json"  background="transparent"  speed="1"    loop  autoplay></lottie-player>
+          </div>
+  </div>
+      
+</div>
+   
     
   
 {% endblock %}
