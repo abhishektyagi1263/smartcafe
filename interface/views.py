@@ -128,7 +128,10 @@ class OrderConfirmation(LoginRequiredMixin, View):
 # @student_required
 @method_decorator(student_required, name='dispatch')
 class OrderPayConfirmation(LoginRequiredMixin, View):
-    def get(self, request, *args, **kwargs):
+    def get(self, request, pk, *args, **kwargs):
+        order = OrderModel.objects.get(pk=pk)
+        order.is_paid = True
+        order.save()
         return render(request, 'interface/order_pay_confirmation.html')
         
 @method_decorator(student_required, name='dispatch')
