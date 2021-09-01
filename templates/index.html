@@ -1,26 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-<div class="container"> 
-  <div class="row">
-      <div class="col-lg-6">
-          <h2 class="mx-2 my-4" style="font-size: 5rem; font-weight:800;">Giving your Hunger a new Option</h2>
-          <a href="{% url 'student_signup' %}" class="btn btn-lg btn-sdw" style="background-color: #007BFF;color:white;box-shadow: 0px 15px 20px rgba(0, 123, 255, 0.3);">Sign up and Code</a>
-    <a href="{% url 'login' %}" class="btn btn-lg btn-sdw " style="color: black;">Login</a>
+<div class="container-fluid lanbackground" style="height:90vh;margin:0"> 
+  <div class="landing-content mx-auto  text-center" style="margin: 11%;">
+    
+          <h2 class=" my-4 landhead mx-8 pt-4" >Giving your Hunger a new Option</h2>
+          <div class="wrapper">
+            <a class="button" href="{% url 'student_signup' %}">Getting Started</a>
+        </div>
+        
+        <!-- Filter: https://css-tricks.com/gooey-effect/ -->
+        <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                </filter>
+            </defs>
+        </svg>
+        
+    <a href="{% url 'login' %}" class=" btnlogin" > Already have account? Login</a>
    
-          
-          </div>
-
-
-          <div class="col-lg-6">
-
-              <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<lottie-player class="lottiefront" src="https://assets5.lottiefiles.com/private_files/lf30_6yjihjym.json"  background="transparent"  speed="1"    loop  autoplay></lottie-player>
-          </div>
-  </div>
       
+  </div>
 </div>
    
-    
+<img src="{% static 'pann.png' %}" width="350px" style="z-index:0 ; position: absolute;top:51%; transform: rotate(31deg);" alt="" />
+<img src="{% static 'cupp.png' %}" width="199px" style="position: absolute;right: 0;top:11%" alt="" />
+
   
 {% endblock %}

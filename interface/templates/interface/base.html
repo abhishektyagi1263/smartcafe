@@ -16,18 +16,44 @@
     <script src="https://use.fontawesome.com/b225fbd532.js"></script>
     <title>Smart Cafeteria</title>
     <style>
-        * {
+:root {
+  --background: #F3F3F4;
+  --pribackground: #D6E3C9;
+  --darkprimary: #A5B382;
+  --secondary : #ffbb95;
+  --seclight: #FDF0E7;
+  --white: white;
+  --black : black;
+}
+/* F3F3F4  FAFBFF*/
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 body {
     font-family: sans-serif;
+    background-color: var(--background);
   }
-  
+.grekbutton{
+  background-color: var(--seclight);
+  border: 3px solid var(--secondary);
+  border-radius: 3px;
+  color: var(--secondry);
+  box-shadow: none;
+  font-weight: 700;
+}
+.grekbutton:hover{
+  box-shadow: none;
+  background-color: var(--secondary);
+  color: #FAFBFF;
+}
+.logosmc{
+  position: absolute; top:8px; left:15px; z-index: 988;
+}
   nav {
     height: 10vh;
-    background: rgb(255,200,119);
+    background: var(--background);
     border-radius:75px;
   }
   
@@ -42,7 +68,7 @@ body {
   }
   
   .nav-links li a {
-    color: white;
+    color: var(--black);
     text-decoration: none;
     font-size: 16px;
   }
@@ -59,15 +85,41 @@ body {
     font-size: 50px;
     color: #ae5fce;
   }
+
+  /* orderpage */
+  .headrow{
+    margin-top: 1.8rem; background-color: #D6E3C9;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3CradialGradient id='a' gradientUnits='objectBoundingBox'%3E%3Cstop offset='0' stop-color='%23A5B382'/%3E%3Cstop offset='1' stop-color='%23D6E3C9'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='750' x2='1550' y2='750'%3E%3Cstop offset='0' stop-color='%23becba6'/%3E%3Cstop offset='1' stop-color='%23D6E3C9'/%3E%3C/linearGradient%3E%3Cpath id='s' fill='url(%23b)' d='M1549.2 51.6c-5.4 99.1-20.2 197.6-44.2 293.6c-24.1 96-57.4 189.4-99.3 278.6c-41.9 89.2-92.4 174.1-150.3 253.3c-58 79.2-123.4 152.6-195.1 219c-71.7 66.4-149.6 125.8-232.2 177.2c-82.7 51.4-170.1 94.7-260.7 129.1c-90.6 34.4-184.4 60-279.5 76.3C192.6 1495 96.1 1502 0 1500c96.1-2.1 191.8-13.3 285.4-33.6c93.6-20.2 185-49.5 272.5-87.2c87.6-37.7 171.3-83.8 249.6-137.3c78.4-53.5 151.5-114.5 217.9-181.7c66.5-67.2 126.4-140.7 178.6-218.9c52.3-78.3 96.9-161.4 133-247.9c36.1-86.5 63.8-176.2 82.6-267.6c18.8-91.4 28.6-184.4 29.6-277.4c0.3-27.6 23.2-48.7 50.8-48.4s49.5 21.8 49.2 49.5c0 0.7 0 1.3-0.1 2L1549.2 51.6z'/%3E%3Cg id='g'%3E%3Cuse href='%23s' transform='scale(0.12) rotate(60)'/%3E%3Cuse href='%23s' transform='scale(0.2) rotate(10)'/%3E%3Cuse href='%23s' transform='scale(0.25) rotate(40)'/%3E%3Cuse href='%23s' transform='scale(0.3) rotate(-20)'/%3E%3Cuse href='%23s' transform='scale(0.4) rotate(-30)'/%3E%3Cuse href='%23s' transform='scale(0.5) rotate(20)'/%3E%3Cuse href='%23s' transform='scale(0.6) rotate(60)'/%3E%3Cuse href='%23s' transform='scale(0.7) rotate(10)'/%3E%3Cuse href='%23s' transform='scale(0.835) rotate(-40)'/%3E%3Cuse href='%23s' transform='scale(0.9) rotate(40)'/%3E%3Cuse href='%23s' transform='scale(1.05) rotate(25)'/%3E%3Cuse href='%23s' transform='scale(1.2) rotate(8)'/%3E%3Cuse href='%23s' transform='scale(1.333) rotate(-60)'/%3E%3Cuse href='%23s' transform='scale(1.45) rotate(-30)'/%3E%3Cuse href='%23s' transform='scale(1.6) rotate(10)'/%3E%3C/g%3E%3C/defs%3E%3Cg %3E%3Cg transform=''%3E%3Ccircle fill='url(%23a)' r='3000'/%3E%3Cg opacity='0.5'%3E%3Ccircle fill='url(%23a)' r='2000'/%3E%3Ccircle fill='url(%23a)' r='1800'/%3E%3Ccircle fill='url(%23a)' r='1700'/%3E%3Ccircle fill='url(%23a)' r='1651'/%3E%3Ccircle fill='url(%23a)' r='1450'/%3E%3Ccircle fill='url(%23a)' r='1250'/%3E%3Ccircle fill='url(%23a)' r='1175'/%3E%3Ccircle fill='url(%23a)' r='900'/%3E%3Ccircle fill='url(%23a)' r='750'/%3E%3Ccircle fill='url(%23a)' r='500'/%3E%3Ccircle fill='url(%23a)' r='380'/%3E%3Ccircle fill='url(%23a)' r='250'/%3E%3C/g%3E%3Cg transform=''%3E%3Cuse href='%23g' transform='rotate(10)'/%3E%3Cuse href='%23g' transform='rotate(120)'/%3E%3Cuse href='%23g' transform='rotate(240)'/%3E%3C/g%3E%3Ccircle fill-opacity='0.17' fill='url(%23a)' r='3000'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+  }
   .headimageorder{
-  height:344px;
-  width:344px;
+    margin-top: 14px;
+  height:260px;
+  
+}
+.headroworder img{
+  
+  position: absolute;
+  bottom: 0;
 }
   
 .headed{
   font-size: clamp(1.4rem, 2.5vw, 5rem); 
   padding: 4.8rem 1.8rem ;
+  font-weight: 800 ; color: azure; 
+ border-radius:.2rem;  text-transform: capitalize;
 
+}
+
+.cardem{
+  background-color: var(--white); color:var(--black); box-shadow: none;
+}
+
+
+.grandma h6{
+  color: var(--darkprimary);
+  font-weight: 800;
 }
 
 input.requirement {
@@ -76,23 +128,123 @@ input.requirement {
         border: none;
         margin: 0 auto;
         
-        background: #2c2c2c;
-        color: #fff;
+        background: var(--pribackground);
+        color: var(--black);
       }
 input.requirement:focus {
         outline-style:solid;
-         outline-color:linear-gradient(to right, #ffc976, #ff5778);
-        background: #2c2c2c;
-        color: #fff;
+         outline-color:var(--darkprimary);
+        background: var(--pribackground);
+        color: var(--black);
         width: 100%;
         box-shadow: none;
       }
-      
+
+      .mysvgbackground {
+      background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23ffffff' stroke-width='.5' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='rotate(1 1000 750) scale(50) translate(-980 -735)'%3E%3Cuse fill='%23fcfcfc' href='%23s' y='2'/%3E%3Cuse fill='%23fcfcfc' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='2'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='rotate(1 1000 750) scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='rotate(1 1000 750) scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='rotate(1 1000 750) scale(50) translate(-980 -735)'%3E%3Cg fill='%23f2f2f2'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='rotate(1 1000 750) scale(50) translate(-980 -735)'%3E%3Cg fill='%23ffffff'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23efefef'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='rotate(1 1000 750) scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='rotate(1 1000 750) scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='rotate(1 1000 750) scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+border: 1px solid #76b852, ; 
+}
+/* history */
+.historycard{background: var(--white); padding: 3px;}
+     
+.infocard{
+  background-color: var(--white);
+}
+
+
+/* cafe side */
+
+.dashtable{
+  background:var(--white);
+}
+.dashtable thead{
+  color: var(--darkprimary);
+  font-weight: 800;
+}
+
+/*  */
+.logbtn{
+  cursor: pointer;
+  background-color: #000;
+  width: 330px;
+  height: 64px;
+  line-height: 64px;
+  position: absolute;
+  z-index: 0;
+  box-shadow: 0px 0px 17px 1px rgba(0, 0, 0, 0.34);
+}
+.logbtn span {
+  color: #fff;
+  display: block;
+  padding-left: 35px;
+  text-transform: uppercase;
+  font: bold 18px/66px Arial;
+  transform: scaleX(0.6);
+  letter-spacing: 3px;
+  transform-origin: center left;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+.logbtn em {
+  position: absolute;
+  height: 1px;
+  background: #fff;
+  width: 47%;
+  right: 23px;
+  top: 50%;
+  transform: scaleX(0.25);
+  transform-origin: center right;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+.logbtn:before,
+.logbtn:after {
+  content: '';
+  background: #fff;
+  height: 50%;
+  width: 0;
+  position: absolute;
+  transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.logbtn:before {
+  top: 0;
+  left: 0;
+  right: auto;
+}
+.logbtn:after {
+  bottom: 0;
+  right: 0;
+  left: auto;
+}
+.logbtn:hover:before {
+  width: 100%;
+  right: 0;
+  left: auto;
+}
+.logbtn:hover:after {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+.logbtn:hover span {
+  color: #000;
+}
+.logbtn:hover em {
+  background: #000;
+  transform: scaleX(1);
+}
+
+/*  */
+
   @media screen and (max-width: 768px) {
     .line {
       width: 30px;
       height: 3px;
-      background: white;
+      background: var(--white);
       margin: 5px;
     }
     nav {
@@ -110,7 +262,7 @@ input.requirement:focus {
   
     .nav-links {
       position: fixed;
-      background: #ffffff;
+      background: var(--white);
       height: 100vh;
       width: 100%;
       flex-direction: column;
@@ -124,7 +276,7 @@ input.requirement:focus {
       clip-path: circle(1000px at 90% -10%);
       -webkit-clip-path: circle(1000px at 90% -10%);
       pointer-events: all;
-      background: rgb(255,200,119);
+      background: var(--darkprimary);
     
     }
     .fadeed {
@@ -148,9 +300,7 @@ input.requirement:focus {
   padding: .8rem .8rem ;
 }
     }
-    .mysvgbackground {
-  background: url('data:image/svg+xml;utf8,<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 800 600"><circle cx="400" cy="300" r="50" stroke-width="5" stroke="#f00" fill="#ff0" /></svg>') center center no-repeat;
-}
+   
 
 
 /* The container */
@@ -183,18 +333,18 @@ input.requirement:focus {
   left: 0;
   height: 45px;
   width: 45px;
-  background-color: #eee;
+  background-color: var(--white);
   border-radius: 45px;
 }
 
 /* On mouse-over, add a grey background color */
 .cor:hover input ~ .checkmark {
-  background-color: #fffbc4;
+  background-color: var(--seclight);
 }
 
 /* When the checkbox is checked, add a blue background */
 .cor input:checked ~ .checkmark {
-  background-color: #fffbc4;
+  background-color: var(--seclight);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -215,28 +365,27 @@ input.requirement:focus {
   top: 3px;
   width: 18px;
   height: 36px;
-  border: solid rgb(255, 125, 49);
-  border-width: 0 5px 5px 0;
+  border: solid var(--darkprimary);
+  border-width: 0 6px 6px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+/* from order page */
 .ordercard{
-  background-color: rgb(255,200,119);
+  background-color: var(--darkprimary);
   color:white;
 }
+.ordercard h6{color:white}
 
 
     </style>
     
 </head>
-<body style="background-color: #FFF6F1;">
-  <a class="" style="position: absolute; top:8px; left:15px; z-index: 988;" href="#"><img src="{% static 'fav.png' %}" width="50px" alt="" /><span style="    font-size: 25px;
-    text-decoration: none;
-    color: black;
-    font-weight: 900;
-    margin-top: 14px;
-    ">Smartcafe</span> </a>
+<body >
+  <a class="logosmc"  href="#">
+  <img src="{% static 'fav.png' %}" width="50px" alt="" />
+ </a>
     
     {% include 'interface/navigation.html' %}
     {% block content %}

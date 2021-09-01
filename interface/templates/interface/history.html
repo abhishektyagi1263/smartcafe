@@ -2,40 +2,22 @@
 
 {% block content %}
 <div class="container mb-5">
-    <div class="row justify-content-center mt-1">
-        <div class="col-md-5 col-sm-12 p-4 text-center">
+    
             <h1>Your history</h1>
-            <a href="{% url 'interface:test' %}">Go to the homepage</a>
-        </div>
+       
+
+<div class="row">
+  
+    {% for e in myorders %}
+    <div class="div col-lg-3 col-sm-12 p-3 historycards " >
+      <h4 style="font-weight: 700;">Order no: {{e.pk}}</h4>
+        <h5 >{{e.created_on}}</h5>
+      <h5>{{e.items_name}}</h5>
+      <h5>{{e.price}}</h5>
+   
     </div>
-
-<div class="row justify-content-center">
-    <div class="col-md-12 mt-5">
-        <table class="table table-hover table-borderless" >
-            <thead style="background-color: #52b788; color:white;">
-              <tr>
-                <th scope="col">Items</th>
-                <th scope="col">Date and Time</th>
-                <th scope="col">Price</th>
-                
-                
-
-              </tr>
-            </thead>
-            <tbody>
-                {% for myorder in myorders %}
-                <tr>
-                    <td>{{ myorder.items_name }}</td>
-                    
-                    <td>{{myorder.created_on}}</td> 
-                    <td>{{ myorder.price }}</td>
-                    
-                </tr>
-                {% endfor %}
-
-            </tbody>
-          </table>
-    </div>
-                        
-</div></div>
+    {%endfor%}
+   
+  </div>
+</div>
 {% endblock content %}

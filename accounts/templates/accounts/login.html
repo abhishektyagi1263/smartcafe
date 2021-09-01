@@ -2,6 +2,7 @@
 {% block content %}
 {% load static %}
 {% load bootstrap4 %}
+<div class="container">
       <div class="login-form">
       <div class="row">
         <div class="col-lg-6 log-cls-line7" >
@@ -13,18 +14,21 @@
           <br>
           {% bootstrap_form form%}
           <br>
-          <button type="submit" class="btn-submit-login btn">Log in</button>
+          <button type="submit" class="logbtn"><span>Login</span><em></em></button>
           <!-- <a href="#" class="btn btn-lg btn-sdw" >Sign in</a> -->
 
         </form>
         <br>
-        <a href="{% url 'student_signup' %}" style="text-decoration:none;"><h7 style="color:black">Don't have an account?<span style="color:blue"> Sign up</span></h7></a>
+        <br>
+        <br>
+        <a href="{% url 'student_signup' %}"  style="text-decoration:none; margin-top: 14px;"><h7 style="color:black">Don't have an account?<span style="color:blue"> Sign up</span></h7></a>
       </div></div>
 
         <div class=" col-lg-6 col-md-12 login-img" style="padding-top:5rem;">
-          <img src="{% static "images/background.png"%}" width="700px">
+          <img src="{% static "3caf.svg"%}" width="700px">
         </div>
 
       </div>
       </div>
+    </div>
 {% endblock %}
