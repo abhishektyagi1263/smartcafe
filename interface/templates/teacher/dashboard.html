@@ -1,25 +1,25 @@
 {% extends 'interface/base.html' %}
-
 {% block content %}
-
+{% load static %}
 <div class="container-fluid">
-    <div class="dashb m-3 ">
-        <h1><i class="fa fa-play " style=" margin-top:15px;color:#887FCE; 
-        text-align: center ;font-size: 28px;background: #B5AFEF; 
-        padding: 14px ;border-radius: 41px; margin-right: 9px;" aria-hidden="true"></i> Dashboard</h1>
-    </div>
+ 
     <div class="row ">
        
 
     
- <div class="col-md-3 col-sm-12 row m-3 .infocard" > 
-            <div class=" col-md-12 col-sm-4 " >
+ <div class="col-md-3 col-sm-12 row m-3 .infocard" style="background:white;"> 
+            <div class=" col-md-12 col-sm-4 pt-3" >
+                <center>   <img src="{% static 'mann.png'%}" width="90px"> </center> 
+                <h5 class="text-center mt-3 ">Today's Collection</h5>
                 
+                <h3 class="text-center mb-1"  style="font-weight: bold;">{{ total_revenue }}</h3>
+             
         </div>
 
-        <div class="col-md-12 col-sm-4 .infocard" >
-            <h5 class="text-center mt-3">Today's Total Orders</h5>
-        
+        <div class="col-md-12 col-sm-4 .infocard p-4" style="background:white;" >
+         <center>  <img src="{% static 'coin.png'%}" width="190px"> </center> 
+            <h5 class="text-center  ">Today's Total Orders</h5>
+            
             <h3 class="text-center mb-1"  style="font-weight: bold;">{{ total_orders }}</h3>
         </div>
         
