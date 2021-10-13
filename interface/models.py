@@ -27,6 +27,9 @@ class OrderModel(models.Model):
     name = models.CharField(max_length=50, blank=True)
     email = models.EmailField(max_length=50, blank=True)
     is_paid = models.BooleanField(default=False)
+    is_cancelled = models.BooleanField(default=False)
+    is_confirm = models.BooleanField(default=False)
+
     items_name = models.TextField(blank=True)
     def __str__(self):
         return f'Order: {self.created_on.strftime("%b %d %Y %I:%M %p")}'

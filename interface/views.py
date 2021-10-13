@@ -26,7 +26,7 @@ class test(LoginRequiredMixin, View):
 
 @method_decorator(student_required, name='dispatch')
 class Order(LoginRequiredMixin, View):
-  
+
     def get(self, request, *args, **kwargs):
         beverages = MenuItem.objects.filter(category__name__contains='Beverages')
         snacksandsides = MenuItem.objects.filter(category__name__contains='Snacks and Sides')
@@ -60,7 +60,7 @@ class Order(LoginRequiredMixin, View):
                 'price': menu_item.price,
             }
             order_items['items'].append(item_data)
-        
+
         price = 0
         item_ids = []
         item_name = []
@@ -69,12 +69,12 @@ class Order(LoginRequiredMixin, View):
             item_ids.append(item['id'])
             item_name.append(item['name'])
 
-        str1 = "" 
-        for ele in item_name: 
-             str1 += ele  
-        
-        
-    
+        str1 = ""
+        for ele in item_name:
+             str1 += ele
+             str1 += " "
+
+
 
         order = OrderModel.objects.create(
             price=price,
@@ -82,7 +82,7 @@ class Order(LoginRequiredMixin, View):
             email=email,
             comment=comment,
             items_name=str1,
-           
+
         )
         order.items.add(*item_ids)
         # order.items_name.add(*item_name)
@@ -120,7 +120,7 @@ class OrderConfirmation(LoginRequiredMixin, View):
         }
 
         return render(request, 'interface/order_confirmation.html', context)
-    
+
     def post(self, request, pk, *args, **kwargs):
         print(request.body)
 
@@ -133,15 +133,15 @@ class OrderPayConfirmation(LoginRequiredMixin, View):
         order.is_paid = True
         order.save()
         return render(request, 'interface/order_pay_confirmation.html')
-        
+
 @method_decorator(student_required, name='dispatch')
 class History(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         myorders = OrderModel.objects.filter(name = request.user.username)
-        
+
         context = {
             'myorders': myorders,
-            
+
         }
         return render(request, 'interface/history.html', context)
 
@@ -154,13 +154,65 @@ class Dashboard(LoginRequiredMixin, View):
 
         for order in orders:
             total_revenue += order.price
-        
+
         context = {
             'orders': orders,
             'total_revenue': total_revenue,
             'total_orders': len(orders)
         }
         return render(request, 'teacher/dashboard.html', context)
+# order confirmed
+@login_required
+@staff_required
+def confirmbystaff(request,pdek):
+    x=OrderModel.objects.get(pk=pdek)
+    print(pdek)
+    x.is_confirm = True
+    x.is_cancelled = False
+    print(x.pk)
+    x.save()
+
+    today = datetime.today()
+    orders = OrderModel.objects.filter(created_on__year=today.year, created_on__month=today.month, created_on__day=today.day)
+    total_revenue = 0
+
+    for order in orders:
+        total_revenue += order.price
+
+    context = {
+        'orders': orders,
+        'total_revenue': total_revenue,
+        'total_orders': len(orders)
+    }
+
+    return render(request,'teacher/dashboard.html', context)
+# cancel order
+@login_required
+@staff_required
+def cancelbystaff(request,pdek):
+    x=OrderModel.objects.get(pk=pdek)
+    print(pdek)
+    x.is_confirm = False
+    x.is_cancelled = True
+    print(x.pk)
+    x.save()
+
+    today = datetime.today()
+    orders = OrderModel.objects.filter(created_on__year=today.year, created_on__month=today.month, created_on__day=today.day)
+    total_revenue = 0
+
+    for order in orders:
+        total_revenue += order.price
+
+    context = {
+        'orders': orders,
+        'total_revenue': total_revenue,
+        'total_orders': len(orders)
+    }
+
+    return render(request,'teacher/dashboard.html', context)
+
+
 
 
 @login_required
@@ -209,8 +261,8 @@ def deleteItem(request,name):
 def edit_que(request,name):
     x=MenuItem.objects.get(name=name)
     cat =x.no
-   
-   
+
+
     # cp = int(cat)
     catvalue = Category.objects.filter(item__pk = cat)
     print(catvalue)
@@ -235,7 +287,7 @@ def final(request):
     x.description=request.POST['description']
     x.image=request.POST['image']
     x.price=request.POST['price']
-    category=request.POST['category']       
+    category=request.POST['category']
     x.save()
     k = Category.objects.get(name = category).id
     n= str(k)

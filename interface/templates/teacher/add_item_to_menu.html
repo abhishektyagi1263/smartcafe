@@ -1,23 +1,23 @@
-{% extends "interface/base.html" %}
+{% extends "base.html" %}
 {% load static %}
 {% block content %}
 <br>
 
 <div class="container-fluid col-lg-8">
-  <h1 class="add-ques-h1">Add Question</h1>
+  <h1 class="add-ques-h1">Add Item</h1>
   <form action=""  method="post">
      {% csrf_token %}
     <div class="">
-      <h6 class="mic">Enter Item No</h6><input class="form-control" type="text" name="no" value=""><br>
+      <h6 class="mic">Enter Item No</h6><input class="form-control requirement" type="text" name="no" value=""><br>
    
-    <h6 class="mic">Enter Item Name</h6><input class="form-control" type="text" name="name" value=""><br>
-    <h6 class="mic">Description</h6><input class="form-control" type="text" name="description" value=""><br>
-    <h6 class="mic">Image Url</h6><input class="form-control" type="text" name="image" value=""><br>
+    <h6 class="mic">Enter Item Name</h6><input class="form-control requirement" type="text" name="name" value=""><br>
+    <h6 class="mic">Description</h6><input class="form-control requirement" type="text" name="description" value=""><br>
+    <h6 class="mic">Image Url</h6><input class="form-control requirement" type="text" name="image" value=""><br>
     <!-- <h6 class="mic">Enter Question Statement</h6>
     <textarea name="question" class="form-control" rows="8" cols="80" class="col-sm-4"></textarea><br> -->
     
-    <h6 class="mic">Price</h6><input class="form-control" type="text" name="price" value=""><br>
-    <h6 class="mic">Category</h6><input class="form-control" type="text" name="category" value=""><br>
+    <h6 class="mic">Price</h6><input class="form-control requirement" type="text" name="price" value=""><br>
+    <h6 class="mic">Category</h6><input class="form-control requirement" type="text" name="category" value=""><br>
 
     <div class="form-group row">
         <br>

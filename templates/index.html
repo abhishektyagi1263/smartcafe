@@ -1,32 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-<div class="container-fluid lanbackground" style="height:90vh;margin:0"> 
-  <div class="landing-content mx-auto  text-center" style="margin: 11%;">
-    
+<div class="container-fluid lanbackground" style="height:90vh;margin:0">
+  <div class="landing-content mx-auto  text-center dep" style="margin: 11%;">
+
           <h2 class=" my-4 landhead mx-8 pt-4" >Giving your Hunger a new Option</h2>
           <div class="wrapper">
-            <a class="button" href="{% url 'student_signup' %}">Getting Started</a>
+            <a class="button" style="color:white;text-decoration:none" href="{% url 'student_signup' %}">Login</a>
         </div>
-        
+
         <!-- Filter: https://css-tricks.com/gooey-effect/ -->
         <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
             <defs>
-                <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+                <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
                     <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
                     <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
                 </filter>
             </defs>
         </svg>
-        
-    <a href="{% url 'login' %}" class=" btnlogin" > Already have account? Login</a>
-   
-      
+      </div>
+</div>
+
+
+
   </div>
 </div>
-   
-<img src="{% static 'pann.png' %}" width="350px" style="z-index:0 ; position: absolute;top:51%; transform: rotate(31deg);" alt="" />
-<img src="{% static 'cupp.png' %}" width="199px" style="position: absolute;right: 0;top:11%" alt="" />
+<img src="{% static 'cp.png' %}" width="150px" style="z-index:-1 ; position: absolute;top:16%;right: 7%; " alt="" />
 
-  
+<img src="{% static 'cupp.png' %}" width="150px" style="z-index:-1 ; position: absolute;top:61%;right: 7%; " alt="" />
+<img src="{% static 'pann.png' %}" width="149px" style="z-index:-1 ;position: absolute;left:4%;top:11%;transform: rotate(14deg);" alt="" />
+<img src="{% static 'pizzz.png' %}" width="271px" style="z-index:-1 ;position: absolute;left:14%;top:61%;" alt="" />
+
+
 {% endblock %}
