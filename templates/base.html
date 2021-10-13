@@ -52,6 +52,28 @@ body {
   box-shadow: none;
   font-weight: 700;
 }
+/* 
+
+
+
+*/
+
+.floating { 
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+ 
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+}
+
+
 .grekbutton:hover{
   box-shadow: none;
   background-color: var(--secondary);
@@ -209,7 +231,7 @@ background-size: cover;
       flex-direction: column;
       clip-path: circle(100px at 90% -10%);
       -webkit-clip-path: circle(100px at 90% -10%);
-      transition: all 1s ease-out;
+      transition: all .4s ease-out;
       pointer-events: none;
       z-index: 1;
     }
@@ -482,7 +504,8 @@ z-index: -1;
 
 </head>
 <body >
-  <a class="logosmc"  href="#">
+
+  <a class="logosmc"  href="{% url 'home' %}">
   <img src="{% static 'fav.png' %}" width="147px" alt="" />
  </a>
 

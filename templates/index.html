@@ -6,7 +6,7 @@
 
           <h2 class=" my-4 landhead mx-8 pt-4" >Giving your Hunger a new Option</h2>
           <div class="wrapper">
-            <a class="button" style="color:white;text-decoration:none" href="{% url 'student_signup' %}">Login</a>
+            <a class="button" style="color:white;text-decoration:none" href="{% url 'login' %}">Login</a>
         </div>
 
         <!-- Filter: https://css-tricks.com/gooey-effect/ -->
@@ -25,10 +25,20 @@
 
   </div>
 </div>
-<img class="demmm" src="{% static 'cp.png' %}" width="150px" style="z-index:-1 ; position: absolute;top:16%;right: 7%; " alt="" />
-<img src="{% static 'cupp.png' %}" width="150px" style="z-index:-1 ; position: absolute;top:64%;right: 7%; " alt="" />
-<img src="{% static 'pann.png' %}" width="149px" style="z-index:-1 ;position: absolute;left:4%;top:11%;transform: rotate(14deg);" alt="" />
-<img class="demmm" src="{% static 'pizzz.png' %}" width="271px" style="z-index:-1 ;position: absolute;left:14%;top:61%;" alt="" />
+<img class="demmm floating" src="{% static 'cp.png' %}" width="150px" style="z-index:-1 ; position: absolute;top:16%;right: 7%; " alt="" />
+<img class="floating"src="{% static 'cupp.png' %}" width="150px" style="z-index:-1 ; position: absolute;top:64%;right: 7%; " alt="" />
+<img  src="{% static 'pann.png' %}" width="149px" style="z-index:-1 ;position: absolute;left:4%;top:11%;transform: rotate(14deg);" alt="" />
+<img class="demmm floating" src="{% static 'pizzz.png' %}" width="271px" style="z-index:-1 ;position: absolute;left:14%;top:61%;" alt="" />
 
 
 {% endblock %}
+
+<!-- <script>
+  $(document).ready(function(){
+  $('.try').toggle(function() {
+    $(".inner").animate({top: '-=100px'}, 2000);
+  }, function() {
+    $(".inner").animate({top: '+=100px'}, 2000);
+  });
+});
+</script> -->
